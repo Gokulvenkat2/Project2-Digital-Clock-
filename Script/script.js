@@ -1,24 +1,19 @@
-const clock=document.querySelector('.clock');
+const clock = document.querySelector(".clock");
 
-function runClock(){
-    var time=new Date();
-    var hrs=time.getHours();
-    var min=time.getMinutes();
-    var sec=time.getSeconds();
-    var txt="AM";
+function runClock() {
+    const time = new Date();
+    let hrs = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    const ampm = hrs >= 12 ? "PM" : "AM";
     
-    if(hrs>12){
-        hrs=hrs-12;
-        txt="PM";
-    }else if(hrs==0){
-        hrs=12;
-        txt="AM";
-    }
-    hrs=hrs<10?'0'+hrs:hrs;
-    min=min<10?'0'+min:min;
-    sec=sec<10?'0'+sec:sec;
+    hrs = hrs % 12 || 12; // Convert 0 to 12 for 12 AM
+    hrs = hrs < 10 ? "0" + hrs : hrs;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
 
-    clock.innerHTML=`${hrs} : ${min} : ${sec} ${txt}`;
+    clock.innerHTML = `${hrs} : ${min} : ${sec} ${ampm}`;
 }
-runClock();
-setInterval(runClock, 1000);
+
+runClock(); // Initial call to display the clock immediately
+setInterval(runClock, 1000); // Update the clock every second
