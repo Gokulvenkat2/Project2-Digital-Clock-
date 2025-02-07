@@ -1,68 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-@font-face{
-    font-family: digital-7; 
-    src: url(CSS/digital-7.ttf);
+@font-face {
+  font-family:digital-7;
+  src: url('digital-7.ttf');
+}
+
+:root{
+  --light-color:#FFC312;
 }
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
-    height:100vh;
-    width: 100vw; 
-    background-color:#474787 ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
+  height: 100vh;
+  width: 100vw;
+  background-color: #2C3A47;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  gap: 50px;
 }
 
 h2{
-    color:#34ace0;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
+  color:#f9ca24;
+  font-size: 50px;
+  font-weight: 500;
 }
 
 .frame{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 300px;
-    background-color:#2c3e50;
-    border:50px solid #33d9b2;
-    border-radius: 10px;
-    transition: 0.5s;
-    padding: 10px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 80px;
+  width: 600px;
+  height: 300px;
+  background-color: #111;
+  border: 50px solid #f9ca24;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  font-size:80px;
+  text-align: center;
+  line-height: 180px;
 }
 
 .clock{
-    font-family: digital-7;
-    font-size: 60px;
-    color: #33d9b2;
-    text-shadow: 0 0 10px #33d9b2;
-    position: relative;
+  font-family:digital-7;
+  color:white;
+  text-shadow: 0 0 20px var(--light-color);
+  position: relative;
+}
+.clock::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color:var(--light-color);
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  filter: blur(40px);
 }
 
-.clock::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #33d9b2;
-    height: 100%;
-    width: 100%;
-    opacity: 0.1;
-    filter: blur(30px);
-}

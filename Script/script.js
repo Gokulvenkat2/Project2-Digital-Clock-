@@ -6,6 +6,7 @@ function runClock(){
     var min=time.getMinutes();
     var sec=time.getSeconds();
     var txt="AM";
+    
     if(hrs>12){
         hrs=hrs-12;
         txt="PM";
